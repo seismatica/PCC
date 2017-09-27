@@ -1,2 +1,5 @@
-x = 5
-print(x)
+def city_country(city, country):
+    print(city + ", " + country)
+
+
+city_country("Ho Chi Minh City", "Vietnam")
