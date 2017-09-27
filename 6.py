@@ -11,11 +11,13 @@ def city_input():
         if city == " " or city == "":
             notify_invalid_input(city)
         else:
-            country = input("Input your country: ")
-            if country == " " or country == "":
-                notify_invalid_input(country)
-            else:
-                city_country(city, country)
+            while active:
+                country = input("Input your country: ")
+                if country == " " or country == "":
+                    notify_invalid_input(country)
+                else:
+                    city_country(city, country)
+                    active = False
 
 
 def notify_invalid_input(user_input):
