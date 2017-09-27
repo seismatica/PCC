@@ -1,3 +1,2 @@
-x = 2
-y = 4
-print
+x = 5
+print(x)
