@@ -3,18 +3,25 @@ def city_country(city, country):
     print(city + ", " + country)
 
 
-def user_input():
+def city_input():
     """This function asks user to input a city and a country, and display them using city_country function"""
     active = True
     while active:
         city = input("Input your city: ")
         if city == " " or city == "":
-            print("Invalid input.\n")
+            notify_invalid_input(city)
         else:
             country = input("Input your country: ")
-            if country == " " or city == "":
-                print("Invalid input.\n")
+            if country == " " or country == "":
+                notify_invalid_input(country)
             else:
                 city_country(city, country)
 
-user_input()
+
+def notify_invalid_input(user_input):
+    """This function notifies user if their input was invalid (" " or "")"""
+    if user_input == " " or user_input == "":
+        print("Invalid input.\n")
+
+
+city_input()
