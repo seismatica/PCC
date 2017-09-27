@@ -5,8 +5,16 @@ def city_country(city, country):
 
 def user_input():
     """This function asks user to input a city and a country, and display them using city_country function"""
-    city = input("Input your city: ")
-    country = input("Input your country: ")
-    city_country(city, country)
+    active = True
+    while active:
+        city = input("Input your city: ")
+        if city == " " or city == "":
+            print("Invalid input.\n")
+        else:
+            country = input("Input your country: ")
+            if country == " " or city == "":
+                print("Invalid input.\n")
+            else:
+                city_country(city, country)
 
 user_input()
