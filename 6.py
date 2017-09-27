@@ -1,6 +1,6 @@
 def city_country(city, country):
     """This function takes in a city and a country, and outputs them next to each other, separate by a comma"""
-    print(city + ", " + country)
+    print(city + ",  " + country)
 
 
 def notify_invalid_input(user_input):
