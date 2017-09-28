@@ -1,5 +1,8 @@
-def make_album(artist, title):
-    album_info = {"name": artist, "title": title}
+def make_album(artist, title, number_of_tracks=""):
+    if str(number_of_tracks):
+        album_info = {"name": artist, "title": title, "number of tracks": number_of_tracks}
+    else:
+        album_info = {"name": artist, "title": title}
     return album_info
 
 
