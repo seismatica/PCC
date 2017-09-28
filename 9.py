@@ -6,10 +6,14 @@ def show_magicians(magicians):
 
 def make_great(magicians):
     """Receive a list of magicians and add "The great" to their names"""
-    for i in range(len(magicians)):
-        magicians[i] = "The great " + magicians[i]  # modify list elements in place using index
+    great_magicians = []
+    while magicians:
+        magician = magicians.pop()
+        great_magician = "The great " + magician
+        great_magicians.append(great_magician)
+    return great_magicians
 
 
 magicians = ["David Copperfield", "David Blaine", "Criss Angel"]
-make_great(magicians)
-print(magicians)
+great_magicians = make_great(magicians)
+show_magicians(great_magicians)
