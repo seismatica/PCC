@@ -1,11 +1,12 @@
-# Read files containing cats and dogs' name, and print them out. If file does not exist, print error
+# Read files containing cats and dogs' name, and print them out.
+# If file does not exist, keep silent and process next file.
 
 
 def print_file(filename):
     try:
         open(filename)
     except FileNotFoundError:
-        print(filename + " not found.")
+        pass
     else:
         with open(filename) as file_object:
             content = file_object.read()
