@@ -1,15 +1,18 @@
 import matplotlib.pyplot as plt
 
-cmap_list = [key for key in plt.cm.datad.keys() if not key.endswith("_r")]
-cmap_list.sort()
+# input_values = list(range(1, 6))
+# squares = [1, 4, 9, 16, 25]
+# plt.plot(input_values, squares, linewidth=5)
+x_values = list(range(1, 5001))
+y_values = [x**3 for x in x_values]
+plt.scatter(x_values, y_values, c=y_values, edgecolors='none', s=40)
+plt.title("Cubed numbers", fontsize=24)
+plt.xlabel("Value", fontsize=14)
+plt.ylabel("Cube of value", fontsize=14)
+plt.axis([0, 5001, 0, 5001**3])
+plt.savefig('cubed_plot_loose.png')
+# plt.tick_params(axis='both', which='major', labelsize=14)
+# plt.show()
 
-cmap_text = ""
-while cmap_list:
-    cmap_line = []
-    while len(cmap_line) < 8:
-        cmap = cmap_list.pop(0)
-        cmap_line.append(cmap)
-    cmap_text += " ".join(cmap_line) + "\n"
 
-with open("cmap_text.txt", "w") as file_content:
-    file_content.write(cmap_text)
+plt.show()
