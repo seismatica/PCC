@@ -16,4 +16,6 @@ class TestCaseCityCountry(unittest.TestCase):
         self.assertEqual(formatted_city_country_population, "Santiago, Chile - population 8400000")
 
 
-unittest.main()
+# print(__name__)
+# if __name__ == "__main__":
+#     unittest.main()
