@@ -147,6 +147,7 @@ def main():
 
     # Create pygal maps plotting object
     map_style = ps.DarkSolarizedStyle
+
     wm = World(style=map_style)
     wm.title = 'World populations'
 
