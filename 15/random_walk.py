@@ -80,7 +80,7 @@ while True:
     rw = RandomWalk(step_count)
     rw.walk()
 
-    # Plot random walk with enlarged start/end points, no axis
+    # Plot random walk with enlarged start/end points and no axes
     plt.figure(dpi=92, figsize=(1, 6))
     plt.scatter(0, 0, c='green', s=100)
     plt.scatter(rw.x_coord[-1], rw.y_coord[-1], c='red', s=100)
