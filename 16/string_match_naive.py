@@ -6,23 +6,26 @@ def return_matched_strings(key_str, target_str):
     :return: List of potential matched substrings that will include the longest match
     """
     matched_strings = []
+    highest_length = 0
     # Fragments start from 0 and get successively smaller (by incrementing the starting index)
     for start in range(len(key_str)):
         # For each start position, end of fragments start from end of string and get successively smaller
         # (by decreasing the ending index)
         for end in range(len(key_str), start, -1):
             # Check if a key string fragment of certain start and end points appear in the target string.
-            # If so, do not check smaller strings at that given start point (by changing the end point),
-            # but move to the next start point.
             str_fragment = key_str[start:end]
             if str_fragment in target_str:
-                matched_strings.append(str_fragment)
-
+                # If the string fragment is longer than the string fragments collected thus far, store it and update
+                # the highest length
+                if len(str_fragment) >= highest_length:
+                    matched_strings.append(str_fragment)
+                    highest_length = len(str_fragment)
+                # Skip the rest of the end point permutations and move to the next start point permutation
                 break
     return matched_strings
 
 
-def lcs(str1, str2):
+def longest_common_substring(str1, str2):
     """
     Find longest common substrings between 2 strings
     :param str1: first string
@@ -40,17 +43,10 @@ def lcs(str1, str2):
 
     # Get list of matched substrings between key and target string
     matched_substrings = return_matched_strings(key_str, target_str)
-
-    # Get the maximum length of the matched substrings
-    max_length = max(len(string) for string in matched_substrings)
-
-    # Collect the matched substrings with the highest length
-    longest_substrings = [string for string in matched_substrings if len(string) == max_length]
-
-    return longest_substrings
+    return matched_substrings
 
 
 if __name__ == '__main__':
     str1 = 'function'
     str2 = 'functioqzunction'
-    print(lcs(str1, str2))
+    print(longest_common_substring(str1, str2))
